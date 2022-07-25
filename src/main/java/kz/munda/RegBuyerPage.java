@@ -212,8 +212,8 @@ public class RegBuyerPage {
 
     public void checkCurrentUrl(String pageUrl) throws Exception {
         System.out.println("Проверка страницы");
-        assertEquals(baseUrl, pageUrl, "Текущая страница недействительна");
-
+        assertEquals(pageUrl, driver.getCurrentUrl(), "Текущая страница недействительна");
+        telegram.getpost("error");
     }
 
 
