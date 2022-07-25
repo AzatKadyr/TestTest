@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -29,6 +30,9 @@ public class RegBuyerPage {
     WebDriver driver;
 
     public RegBuyerPage(WebDriver driver) {this.driver = driver;}
+
+
+    TelegramSend telegram = PageFactory.initElements(driver, TelegramSend.class);
 
     // Элементы страницы регистрации
 
@@ -158,7 +162,7 @@ public class RegBuyerPage {
     public void checkErrors(String actual)  throws Exception {
         //assertEquals(getAlert.getText(), actual);
         System.out.println("Ошибка: " + getAlert.getText());
-        getpost("Ошибка: " + getAlert.getText());
+        telegram.getpost("Ошибка: " + getAlert.getText());
 
 
     }
@@ -167,7 +171,7 @@ public class RegBuyerPage {
         //assertEquals(getTitleDiv.getText(), actual);
 
         System.out.println("Ошибка: " + getTitleDiv.getText());
-        getpost("Ошибка: " + getTitleDiv.getText());
+        telegram.getpost("Ошибка: " + getTitleDiv.getText());
 
 
 
@@ -265,85 +269,5 @@ public class RegBuyerPage {
             if (myFile.isFile()) myFile.delete();
     }
 
-    public void getpost(String textlog) throws Exception {
 
-
-        // `HttpURLConnection` connection = (HttpURLConnection) url.openConnection();
-        // connection.setRequestMethod("GET");
-
-        String q = textlog;
-        String urllog = logUrl + URLEncoder.encode(q, StandardCharsets.UTF_8);
-
-        URL url = new URL(urllog);
-        URLConnection connection = url.openConnection();
-
-
-        try (BufferedReader in = new BufferedReader(
-                new InputStreamReader(connection.getInputStream())))
-        {
-            String line;
-            while ((line = in.readLine()) != null) {
-                System.out.println(line);
-            }
-        }
-    }
-
-/*
-    public void uploadImg(){
-
-        String urlAdress = "https://api.kex888.kz/sendtestlog.php?textlog=azaz";
-        URL url;
-        HttpURLConnection httpURLConnection;
-        OutputStream os = null;
-        InputStreamReader isR = null;
-        BufferedReader bfR = null;
-
-        try {
-
-            Map<String, String> postargs = new HashMap<>();
-            postargs.put("user", "Bob");
-            postargs.put("password", "1234");
-
-            byte[] out = postargs.toString().getBytes();
-
-            url = new URL(urlAdress);
-            httpURLConnection = (HttpURLConnection)url.openConnection();
-            httpURLConnection.setRequestMethod("POST");
-            httpURLConnection.setDoOutput(true);
-            httpURLConnection.setDoInput(true);
-
-            httpURLConnection.addRequestProperty("User-Agent", "Mozilla/5.0");
-            httpURLConnection.addRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-
-            httpURLConnection.setConnectTimeout(200);
-            httpURLConnection.setReadTimeout(200);
-            httpURLConnection.connect();
-
-
-
-
-            try {
-                os = httpURLConnection.getOutputStream();
-                os.write(out);
-            } catch (Exception e){
-                System.err.print(e.getMessage());
-            }
-            if (HttpURLConnection.HTTP_OK == httpURLConnection.getResponseCode()){
-                isR = new InputStreamReader(httpURLConnection.getInputStream());
-                bfR = new BufferedReader(isR);
-                while (bfR.readLine() != null){
-                    System.out.println("Данные отправлены");
-                }
-            }
-
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            System.err.print(e.getMessage());
-        }
-
-
-    }
-*/
-    //funct
 }

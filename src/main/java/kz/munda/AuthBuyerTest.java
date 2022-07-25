@@ -10,6 +10,7 @@ public class AuthBuyerTest extends WebDriverSettings{
     public void authBuyer() throws Exception {
 
         AuthBuyerPage authPage = PageFactory.initElements(driver, AuthBuyerPage.class);
+        logout logoutpage = PageFactory.initElements(driver, logout.class);
 
         authPage.open("");
         authPage.sleep(3000);
@@ -22,8 +23,29 @@ public class AuthBuyerTest extends WebDriverSettings{
         authPage.buttonClick();
         authPage.sleep(2500);
         authPage.checkCurrentUrl("");
+
+        authPage.sleep(2500);
+        logoutpage.clickMenu();
+        authPage.sleep(2500);
+        logoutpage.clickBtn();
+        authPage.sleep(10500);
 //comment
     }
 
+    @Test(description = "Выход из сайта")
+    public void logoutUser() throws Exception {
+
+        logout logoutpage = PageFactory.initElements(driver, logout.class);
+        AuthBuyerPage authPage = PageFactory.initElements(driver, AuthBuyerPage.class);
+
+        authPage.open("");
+        authPage.sleep(3000);
+        authPage.sleep(2500);
+        logoutpage.clickMenu();
+        authPage.sleep(2500);
+        logoutpage.clickBtn();
+        authPage.sleep(10500);
+//comment
+    }
 
 }

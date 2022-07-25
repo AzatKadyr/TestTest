@@ -6,13 +6,15 @@ import static kz.munda.variable.*;
 
 public class RegBuyerTest extends WebDriverSettings{
 
+    TelegramSend telegram = PageFactory.initElements(driver, TelegramSend.class);
+
     @Test(description = "Регистрация покупателя")
     public void regBuyer() throws Exception {
 
         String testcase = "1.1 Регистрация покупателя (Ожидаемое поведение системы)";
         RegBuyerPage bayerPage = PageFactory.initElements(driver, RegBuyerPage.class);
         //deleteAllFilesFolder();
-        bayerPage.getpost("Тест кейс №"+ testcase +" Тестирование начато");
+        telegram.getpost("Тест кейс №"+ testcase +" Тестирование начато");
 
         bayerPage.open(registrationUrl);
         bayerPage.insertPhone(phone);
@@ -54,7 +56,7 @@ public class RegBuyerTest extends WebDriverSettings{
         bayerPage.clickBtnNext3();
         bayerPage.sleep(3000);
         bayerPage.checkCurrentUrl(driver.getCurrentUrl());
-        bayerPage.getpost("Тест кейс №"+ testcase +" Тестирование успешно завершено");
+        telegram.getpost("Тест кейс №"+ testcase +" Тестирование успешно завершено");
 
     }
 
@@ -66,13 +68,13 @@ public class RegBuyerTest extends WebDriverSettings{
         String testcase = "1.1 Регистрация покупателя (Ошибочные данные)";
         RegBuyerPage bayerPage = PageFactory.initElements(driver, RegBuyerPage.class);
 
-        bayerPage.getpost("Тест кейс №"+ testcase +" Тестирование начато");
+        telegram.getpost("Тест кейс №"+ testcase +" Тестирование начато");
 
         bayerPage.open(registrationUrl);
         bayerPage.insertPhone(falsePhone);
         bayerPage.clickBtn();
         bayerPage.sleep(3000);
-        bayerPage.getpost("Тест кейс №"+ testcase +" Тестирование успешно завершено");
+        telegram.getpost("Тест кейс №"+ testcase +" Тестирование успешно завершено");
         bayerPage.screenShots(testcase);
 
     }
