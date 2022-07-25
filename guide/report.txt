@@ -1,0 +1,5 @@
+Запуск сервера для просмотра HTML отчетов
+allure serve C:\Users\imagi\IdeaProjects\kzmunda\allure-results
+
+Инструкция
+https://www.youtube.com/watch?v=5b4ZMAjHitw
