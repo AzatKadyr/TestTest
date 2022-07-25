@@ -13,7 +13,7 @@ public class AuthBuyerPage {
     WebDriver driver;
     public AuthBuyerPage(WebDriver driver) {this.driver = driver;}
 
-    // Элементы страницы авторизации покупателя
+    // Р­Р»РµРјРµРЅС‚С‹ СЃС‚СЂР°РЅРёС†С‹ Р°РІС‚РѕСЂРёР·Р°С†РёРё РїРѕРєСѓРїР°С‚РµР»СЏ
 
     @FindBy(xpath = "//div[contains(@class, 'topPage__links')]/a[contains(@href, '/login')]")
     @CacheLookup
@@ -31,7 +31,7 @@ public class AuthBuyerPage {
     @CacheLookup
     private WebElement buttonAuth;
 
-    // Элементы страницы авторизации покупателя
+    // Р­Р»РµРјРµРЅС‚С‹ СЃС‚СЂР°РЅРёС†С‹ Р°РІС‚РѕСЂРёР·Р°С†РёРё РїРѕРєСѓРїР°С‚РµР»СЏ
 
 
     public void open(String pageurl) {
@@ -60,8 +60,8 @@ public class AuthBuyerPage {
     }
 
     public void checkCurrentUrl(String pageUrl) throws Exception {
-        System.out.println("Проверка страницы");
-        assertEquals(baseUrl+pageUrl, driver.getCurrentUrl(), "Текущая страница недействительна");
+        System.out.println("РџСЂРѕРІРµСЂРєР° СЃС‚СЂР°РЅРёС†С‹");
+        assertEquals(baseUrl+pageUrl, driver.getCurrentUrl(), "РўРµРєСѓС‰Р°СЏ СЃС‚СЂР°РЅРёС†Р° РЅРµРґРµР№СЃС‚РІРёС‚РµР»СЊРЅР°");
 
     }
 

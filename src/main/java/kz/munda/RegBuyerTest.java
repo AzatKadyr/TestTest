@@ -6,13 +6,13 @@ import static kz.munda.variable.*;
 
 public class RegBuyerTest extends WebDriverSettings{
 
-    @Test(description = "Регистрация покупателя")
+    @Test(description = "Р РµРіРёСЃС‚СЂР°С†РёСЏ РїРѕРєСѓРїР°С‚РµР»СЏ")
     public void regBuyer() throws Exception {
 
-        String testcase = "1.1 Регистрация покупателя (Ожидаемое поведение системы)";
+        String testcase = "1.1 Р РµРіРёСЃС‚СЂР°С†РёСЏ РїРѕРєСѓРїР°С‚РµР»СЏ (РћР¶РёРґР°РµРјРѕРµ РїРѕРІРµРґРµРЅРёРµ СЃРёСЃС‚РµРјС‹)";
         RegBuyerPage bayerPage = PageFactory.initElements(driver, RegBuyerPage.class);
         //deleteAllFilesFolder();
-        bayerPage.getpost("Тест кейс №"+ testcase +" Тестирование начато");
+        bayerPage.getpost("РўРµСЃС‚ РєРµР№СЃ в„–"+ testcase +" РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РЅР°С‡Р°С‚Рѕ");
 
         bayerPage.open(registrationUrl);
         bayerPage.insertPhone(phone);
@@ -54,7 +54,7 @@ public class RegBuyerTest extends WebDriverSettings{
         bayerPage.clickBtnNext3();
         bayerPage.sleep(3000);
         bayerPage.checkCurrentUrl(driver.getCurrentUrl());
-        bayerPage.getpost("Тест кейс №"+ testcase +" Тестирование успешно завершено");
+        bayerPage.getpost("РўРµСЃС‚ РєРµР№СЃ в„–"+ testcase +" РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ СѓСЃРїРµС€РЅРѕ Р·Р°РІРµСЂС€РµРЅРѕ");
 
     }
 
@@ -63,16 +63,16 @@ public class RegBuyerTest extends WebDriverSettings{
     @Test
     public void regBuyerErrorFalsePhone() throws Exception {
 
-        String testcase = "1.1 Регистрация покупателя (Ошибочные данные)";
+        String testcase = "1.1 Р РµРіРёСЃС‚СЂР°С†РёСЏ РїРѕРєСѓРїР°С‚РµР»СЏ (РћС€РёР±РѕС‡РЅС‹Рµ РґР°РЅРЅС‹Рµ)";
         RegBuyerPage bayerPage = PageFactory.initElements(driver, RegBuyerPage.class);
 
-        bayerPage.getpost("Тест кейс №"+ testcase +" Тестирование начато");
+        bayerPage.getpost("РўРµСЃС‚ РєРµР№СЃ в„–"+ testcase +" РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ РЅР°С‡Р°С‚Рѕ");
 
         bayerPage.open(registrationUrl);
         bayerPage.insertPhone(falsePhone);
         bayerPage.clickBtn();
         bayerPage.sleep(3000);
-        bayerPage.getpost("Тест кейс №"+ testcase +" Тестирование успешно завершено");
+        bayerPage.getpost("РўРµСЃС‚ РєРµР№СЃ в„–"+ testcase +" РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ СѓСЃРїРµС€РЅРѕ Р·Р°РІРµСЂС€РµРЅРѕ");
         bayerPage.screenShots(testcase);
 
     }

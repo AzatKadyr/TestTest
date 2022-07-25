@@ -6,7 +6,7 @@ import static kz.munda.variable.*;
 
 public class AuthBuyerTest extends WebDriverSettings{
 
-    @Test(description = "1.1 Авторизация покупателя")
+    @Test(description = "1.1 РђРІС‚РѕСЂРёР·Р°С†РёСЏ РїРѕРєСѓРїР°С‚РµР»СЏ")
     public void authBuyer() throws Exception {
 
         AuthBuyerPage authPage = PageFactory.initElements(driver, AuthBuyerPage.class);

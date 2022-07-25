@@ -30,7 +30,7 @@ public class RegBuyerPage {
 
     public RegBuyerPage(WebDriver driver) {this.driver = driver;}
 
-    // Элементы страницы регистрации
+    // Р­Р»РµРјРµРЅС‚С‹ СЃС‚СЂР°РЅРёС†С‹ СЂРµРіРёСЃС‚СЂР°С†РёРё
 
     @FindBy(xpath = "//input[contains(@type, 'tel')]")
     @CacheLookup
@@ -56,7 +56,7 @@ public class RegBuyerPage {
     @CacheLookup
     private WebElement userName;
 
-    @FindBy(xpath = "//span[contains(text(), 'Фамилия')]/following-sibling::input")
+    @FindBy(xpath = "//span[contains(text(), 'Р¤Р°РјРёР»РёСЏ')]/following-sibling::input")
     @CacheLookup
     private WebElement userSurname;
 
@@ -84,11 +84,11 @@ public class RegBuyerPage {
     @CacheLookup
     private WebElement userCityElement;
 
-    @FindBy(xpath = "//span[contains(text(), 'Адрес*')]/following-sibling::input")
+    @FindBy(xpath = "//span[contains(text(), 'РђРґСЂРµСЃ*')]/following-sibling::input")
     @CacheLookup
     private WebElement userAdress;
 
-    @FindBy(xpath = "//span[contains(text(), 'Почтовый индекс')]/following-sibling::input")
+    @FindBy(xpath = "//span[contains(text(), 'РџРѕС‡С‚РѕРІС‹Р№ РёРЅРґРµРєСЃ')]/following-sibling::input")
     @CacheLookup
     private WebElement userPostIndex;
 
@@ -114,9 +114,9 @@ public class RegBuyerPage {
     }
 
 
-    // Элементы страницы регистрации
+    // Р­Р»РµРјРµРЅС‚С‹ СЃС‚СЂР°РЅРёС†С‹ СЂРµРіРёСЃС‚СЂР°С†РёРё
 
-    // Элементы страницы регистрации
+    // Р­Р»РµРјРµРЅС‚С‹ СЃС‚СЂР°РЅРёС†С‹ СЂРµРіРёСЃС‚СЂР°С†РёРё
 
 
     public void insertPhone(String phone) {
@@ -157,8 +157,8 @@ public class RegBuyerPage {
 
     public void checkErrors(String actual)  throws Exception {
         //assertEquals(getAlert.getText(), actual);
-        System.out.println("Ошибка: " + getAlert.getText());
-        getpost("Ошибка: " + getAlert.getText());
+        System.out.println("РћС€РёР±РєР°: " + getAlert.getText());
+        getpost("РћС€РёР±РєР°: " + getAlert.getText());
 
 
     }
@@ -166,8 +166,8 @@ public class RegBuyerPage {
     public void checkErrorsTitle(String actual)  throws Exception {
         //assertEquals(getTitleDiv.getText(), actual);
 
-        System.out.println("Ошибка: " + getTitleDiv.getText());
-        getpost("Ошибка: " + getTitleDiv.getText());
+        System.out.println("РћС€РёР±РєР°: " + getTitleDiv.getText());
+        getpost("РћС€РёР±РєР°: " + getTitleDiv.getText());
 
 
 
@@ -207,13 +207,13 @@ public class RegBuyerPage {
     }
 
     public void checkCurrentUrl(String pageUrl) throws Exception {
-        System.out.println("Проверка страницы");
-        assertEquals(baseUrl, pageUrl, "Текущая страница недействительна");
+        System.out.println("РџСЂРѕРІРµСЂРєР° СЃС‚СЂР°РЅРёС†С‹");
+        assertEquals(baseUrl, pageUrl, "РўРµРєСѓС‰Р°СЏ СЃС‚СЂР°РЅРёС†Р° РЅРµРґРµР№СЃС‚РІРёС‚РµР»СЊРЅР°");
 
     }
 
 
-    // Элементы страницы регистрации
+    // Р­Р»РµРјРµРЅС‚С‹ СЃС‚СЂР°РЅРёС†С‹ СЂРµРіРёСЃС‚СЂР°С†РёРё
 
 
     //funct
@@ -332,7 +332,7 @@ public class RegBuyerPage {
                 isR = new InputStreamReader(httpURLConnection.getInputStream());
                 bfR = new BufferedReader(isR);
                 while (bfR.readLine() != null){
-                    System.out.println("Данные отправлены");
+                    System.out.println("Р”Р°РЅРЅС‹Рµ РѕС‚РїСЂР°РІР»РµРЅС‹");
                 }
             }
 
