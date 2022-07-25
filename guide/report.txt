@@ -1,5 +1,5 @@
-Запуск сервера для просмотра HTML отчетов
+Р—Р°РїСѓСЃРє СЃРµСЂРІРµСЂР° РґР»СЏ РїСЂРѕСЃРјРѕС‚СЂР° HTML РѕС‚С‡РµС‚РѕРІ
 allure serve C:\Users\imagi\IdeaProjects\kzmunda\allure-results
 
-Инструкция
+РРЅСЃС‚СЂСѓРєС†РёСЏ
 https://www.youtube.com/watch?v=5b4ZMAjHitw
