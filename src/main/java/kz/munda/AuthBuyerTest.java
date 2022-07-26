@@ -10,7 +10,7 @@ import static kz.munda.variable.*;
 
 public class AuthBuyerTest extends WebDriverSettings {
 
-    @Test(description = "1.1 Авторизация покупателя")
+    @Test(description = "1.1 Авторизация покупателя", testName = "1.1 Авторизация покупателя")
     public void authBuyer() throws Exception {
 
         AuthBuyerPage authPage = PageFactory.initElements(driver, AuthBuyerPage.class);
@@ -25,9 +25,10 @@ public class AuthBuyerTest extends WebDriverSettings {
         authPage.buttonClick();
         authPage.sleep(2500);
         authPage.checkCurrentUrl("");
+        logoutUser();
     }
 
-    @Test(description = "Выход из сайта")
+    @Test(description = "Выход из сайта", testName = " Выход из сайта")
     public void logoutUser() throws Exception {
 
         logout logoutpage = PageFactory.initElements(driver, logout.class);

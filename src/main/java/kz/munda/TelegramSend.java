@@ -1,13 +1,21 @@
 package kz.munda;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import com.github.kevinsawicki.http.HttpRequest;
+import org.apache.commons.io.IOUtils;
+import org.testng.annotations.Test;
+
+import java.io.*;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.Base64;
+import java.util.HashMap;
+import java.util.Map;
 
 import static kz.munda.variable.logUrl;
+import static kz.munda.variable.urlUpload;
 
 public class TelegramSend {
     public void getpost(String textlog) throws Exception {
@@ -30,6 +38,30 @@ public class TelegramSend {
             while ((line = in.readLine()) != null) {
                 System.out.println(line);
             }
+        }
+    }
+
+    @Test
+    public void sendFile(String filepath, String filename, String testname) throws Exception {
+
+        String base64="";
+        try{
+            InputStream iSteamReader = new FileInputStream(filepath);
+            byte[] imageBytes = IOUtils.toByteArray(iSteamReader);
+            base64 = Base64.getEncoder().encodeToString(imageBytes);
+            //System.out.println(base64);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+        HttpRequest request = HttpRequest.post(urlUpload);
+        request.part("filename", filename);
+        request.part("photo", ""+base64);
+        request.part("testname", testname);
+        //request.part("file", new File("out/5.JPG"));
+        int status = request.code();
+        if(status == 200) {
+            System.out.println(request.body());
         }
     }
 

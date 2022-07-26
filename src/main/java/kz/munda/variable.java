@@ -10,6 +10,7 @@ abstract class variable extends RegBuyerPage{
     public static final String authUrl = "login";
     public static final String adminCabinetUrl = "http://admin.mundamarket.kz/";
     public static final String logUrl = "http://api.kex888.kz/sendtestlog.php?textlog=";
+    public static final String urlUpload = "http://api.kex888.kz/sendtestlog.php?sendphoto=";
 
     public static final String phone = getRandomPhone();
     public static final String falsePhone = "7029677226";
@@ -31,4 +32,8 @@ abstract class variable extends RegBuyerPage{
     public variable(WebDriver driver) {
         super(driver);
     }
+
+    //Отправка уведомление, если тестирование успешно прошло
+    public static final boolean isSuccessSend = false;
+    public static final boolean sendErrorScreenshots = true;
 }
