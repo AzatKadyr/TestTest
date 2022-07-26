@@ -55,7 +55,7 @@ public class RegBuyerTest extends WebDriverSettings{
         bayerPage.sleep(1000);
         bayerPage.clickBtnNext3();
         bayerPage.sleep(3000);
-        bayerPage.checkCurrentUrl("");
+        bayerPage.checkCurrentUrl("55555555");
         telegram.getpost("Тест кейс №"+ testcase +" Тестирование успешно завершено");
 
     }

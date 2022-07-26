@@ -3,10 +3,10 @@
 
 
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="C:/Users/imagi/IdeaProjects/testng-munda">
+    <test verbose="2" preserve-order="true" name="Авторизация покупателя">
 
         <classes>
-            <class name="kz.munda.RegBuyerTest"></class>
+            <class name="kz.munda.AuthBuyerTest"></class>
         </classes>
     </test>
 </suite>

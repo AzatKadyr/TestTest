@@ -1,10 +1,14 @@
 package kz.munda;
+
+import io.qameta.allure.Attachment;
+import io.qameta.allure.Description;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
 import static kz.munda.variable.*;
 
-public class AuthBuyerTest extends WebDriverSettings{
+
+public class AuthBuyerTest extends WebDriverSettings {
 
     @Test(description = "1.1 Авторизация покупателя")
     public void authBuyer() throws Exception {
@@ -12,9 +16,7 @@ public class AuthBuyerTest extends WebDriverSettings{
         AuthBuyerPage authPage = PageFactory.initElements(driver, AuthBuyerPage.class);
         logout logoutpage = PageFactory.initElements(driver, logout.class);
 
-        authPage.open("");
-        authPage.sleep(3000);
-        authPage.authClick();
+        authPage.open(authUrl);
         authPage.sleep(3000);
         authPage.checkCurrentUrl(authUrl);
         authPage.insertPhone("7029677226");
@@ -23,13 +25,6 @@ public class AuthBuyerTest extends WebDriverSettings{
         authPage.buttonClick();
         authPage.sleep(2500);
         authPage.checkCurrentUrl("");
-
-        authPage.sleep(2500);
-        logoutpage.clickMenu();
-        authPage.sleep(2500);
-        logoutpage.clickBtn();
-        authPage.sleep(10500);
-//comment
     }
 
     @Test(description = "Выход из сайта")

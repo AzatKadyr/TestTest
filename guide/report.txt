@@ -1,4 +1,5 @@
 Запуск сервера для просмотра HTML отчетов
+В командной строке запустить
 allure serve C:\Users\imagi\IdeaProjects\kzmunda\allure-results
 
 Инструкция
