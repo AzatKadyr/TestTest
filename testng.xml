@@ -7,6 +7,8 @@
 
         <classes>
             <class name="kz.munda.AuthBuyerTest"></class>
+            <class name="kz.munda.RegBuyerTest"></class>
+            <class name="kz.munda.ForgotPasswordTest"></class>
         </classes>
     </test>
 </suite>

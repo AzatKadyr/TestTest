@@ -8,7 +8,7 @@ public class RegBuyerTest extends WebDriverSettings{
 
     TelegramSend telegram = PageFactory.initElements(driver, TelegramSend.class);
 
-    @Test(description = "Регистрация покупателя")
+    @Test(description = "Регистрация покупателя", groups = "munda_organization")
     public void regBuyer() throws Exception {
 
         String testcase = "1.1 Регистрация покупателя (Ожидаемое поведение системы)";
@@ -55,14 +55,14 @@ public class RegBuyerTest extends WebDriverSettings{
         bayerPage.sleep(1000);
         bayerPage.clickBtnNext3();
         bayerPage.sleep(3000);
-        bayerPage.checkCurrentUrl("55555555");
+        bayerPage.checkCurrentUrl(baseUrl);
         telegram.getpost("Тест кейс №"+ testcase +" Тестирование успешно завершено");
 
     }
 
 
 
-    @Test
+    @Test(enabled = false)
     public void regBuyerErrorFalsePhone() throws Exception {
 
         String testcase = "1.1 Регистрация покупателя (Ошибочные данные)";
