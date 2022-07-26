@@ -25,6 +25,9 @@ abstract class variable extends RegBuyerPage{
     public static final String admin = "77029677226";
     public static final String passwordadmin = "123456";
 
+    public static final String staticUser = "7029677226";
+    public static final String statisPassword = "123456";
+
     public static final String downloadsFolder = "out";
 
     public static final String screenShotsFolder = "out/screenShots";
