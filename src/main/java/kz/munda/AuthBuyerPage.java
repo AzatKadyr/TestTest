@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
-
+import kz.munda.WebDriverSettings;
 import static kz.munda.variable.*;
 import static org.testng.Assert.assertEquals;
 
