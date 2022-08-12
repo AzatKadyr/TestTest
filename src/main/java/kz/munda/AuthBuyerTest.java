@@ -10,6 +10,9 @@ import static kz.munda.variable.*;
 
 public class AuthBuyerTest extends WebDriverSettings {
 
+
+    function func = PageFactory.initElements(driver, function.class);
+
     @Test(description = "1.1 Авторизация покупателя", testName = "1.1 Авторизация покупателя", groups = "munda_organization")
     public void authBuyer() throws Exception {
 
@@ -17,13 +20,13 @@ public class AuthBuyerTest extends WebDriverSettings {
         logout logoutpage = PageFactory.initElements(driver, logout.class);
 
         authPage.open(authUrl);
-        authPage.sleep(3000);
+        func.sleep(3000);
         authPage.checkCurrentUrl(authUrl);
         authPage.insertPhone(staticUser);
         authPage.insertPassword(statisPassword);
-        authPage.sleep(2500);
+        func.sleep(2500);
         authPage.buttonClick();
-        authPage.sleep(2500);
+        func.sleep(2500);
         authPage.checkCurrentUrl("");
     }
 
@@ -34,12 +37,12 @@ public class AuthBuyerTest extends WebDriverSettings {
         AuthBuyerPage authPage = PageFactory.initElements(driver, AuthBuyerPage.class);
 
         authPage.open("");
-        authPage.sleep(3000);
-        authPage.sleep(2500);
+        func.sleep(3000);
+        func.sleep(2500);
         logoutpage.clickMenu();
-        authPage.sleep(2500);
+        func.sleep(2500);
         logoutpage.clickBtn();
-        authPage.sleep(10500);
+        func.sleep(10500);
 //comment
     }
 

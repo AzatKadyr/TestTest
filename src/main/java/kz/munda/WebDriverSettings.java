@@ -7,15 +7,11 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 
 import static kz.munda.variable.*;
 
 import java.io.File;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
@@ -26,29 +22,27 @@ public class WebDriverSettings {
     TelegramSend telegram = PageFactory.initElements(driver, TelegramSend.class);
 
 
-    @BeforeTest
+    @BeforeClass
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "C:\\chrome\\chromedriver.exe");
         driver = new ChromeDriver();
         System.out.println("test start");
     }
 
+    @AfterClass
+    public void closeWindow() {
+        driver.close();
+    }
+
     @AfterTest
     public void close() {
-        //driver.quit();
-        System.out.println("test close");
+        driver.quit();
     }
 
-    @BeforeMethod
-    public void viewLog(ITestResult testResult) throws Exception {
-
-        System.out.println(testResult);
-
-    }
 
     @AfterMethod
-    @Attachment
-    public void takeScreenShotOnFailure(ITestResult testResult) throws Exception {
+    @Attachment(value = "screen", type = "image/jpg")
+    public byte[] takeScreenShotOnFailure(ITestResult testResult) throws Exception {
 
         if (testResult.getStatus() == ITestResult.FAILURE) {
 
@@ -82,6 +76,7 @@ public class WebDriverSettings {
 
 
         }
+        return  ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
     }
 
 }

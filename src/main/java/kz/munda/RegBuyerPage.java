@@ -56,6 +56,10 @@ public class RegBuyerPage {
     @CacheLookup
     private WebElement finishRegBtn;
 
+    @FindBy(xpath = "//button[@class = 'button -orange button-position mt-48']")
+    @CacheLookup
+    private WebElement smsCodeBtn;
+
     @FindBy(xpath = "//input[contains(@type, 'text')]")
     @CacheLookup
     private WebElement userName;
@@ -112,6 +116,23 @@ public class RegBuyerPage {
     @CacheLookup
     private WebElement getTitleDiv;
 
+
+    @FindBy(xpath = "//*[@id=\"authLayout\"]/div/div/div/div[2]/div[3]/div[2]/div[1]/div/div/input[1]")
+    @CacheLookup
+    private WebElement smscode1;
+
+    @FindBy(xpath = "//*[@id=\"authLayout\"]/div/div/div/div[2]/div[3]/div[2]/div[1]/div/div/input[2]")
+    @CacheLookup
+    private WebElement smscode2;
+
+    @FindBy(xpath = "//*[@id=\"authLayout\"]/div/div/div/div[2]/div[3]/div[2]/div[1]/div/div/input[3]")
+    @CacheLookup
+    private WebElement smscode3;
+
+    @FindBy(xpath = "//*[@id=\"authLayout\"]/div/div/div/div[2]/div[3]/div[2]/div[1]/div/div/input[4]")
+    @CacheLookup
+    private WebElement smscode4;
+
     public void open(String pageurl) {
         driver.get(baseUrl+ pageurl);
         driver.manage().window().maximize();
@@ -159,6 +180,10 @@ public class RegBuyerPage {
         finishRegBtn.click();
     }
 
+    public void smsBtnClick() {
+        smsCodeBtn.click();
+    }
+
     public void checkErrors(String actual)  throws Exception {
         //assertEquals(getAlert.getText(), actual);
         System.out.println("Ошибка: " + getAlert.getText());
@@ -177,6 +202,18 @@ public class RegBuyerPage {
 
     }
 
+    public void  insertSmsCode(String code){
+
+        String a1 = String.valueOf(code.charAt(0));
+        String b2 = String.valueOf(code.charAt(1));
+        String c3 = String.valueOf(code.charAt(2));
+        String d4 = String.valueOf(code.charAt(3));
+
+        smscode1.sendKeys(a1);
+        smscode2.sendKeys(b2);
+        smscode3.sendKeys(c3);
+        smscode4.sendKeys(d4);
+    }
     public void insertPassword(String password) {
         userPassword.sendKeys(password);
     }
@@ -213,7 +250,7 @@ public class RegBuyerPage {
     public void checkCurrentUrl(String pageUrl) throws Exception {
         System.out.println("Проверка страницы");
         assertEquals(pageUrl, driver.getCurrentUrl(), "Текущая страница недействительна");
-        telegram.getpost("error");
+        //telegram.getpost("error");
     }
 
 
@@ -221,6 +258,7 @@ public class RegBuyerPage {
 
 
     //funct
+
     public static String getRandomPhone() {
         String s = "123456789";
         StringBuffer phoneNumber = new StringBuffer();
