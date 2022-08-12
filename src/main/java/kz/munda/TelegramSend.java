@@ -5,17 +5,14 @@ import org.apache.commons.io.IOUtils;
 import org.testng.annotations.Test;
 
 import java.io.*;
-import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
-import java.util.HashMap;
-import java.util.Map;
 
-import static kz.munda.variable.logUrl;
-import static kz.munda.variable.urlUpload;
+import static kz.munda.variable.*;
+import static kz.munda.variable.phone;
 
 public class TelegramSend {
     public void getpost(String textlog) throws Exception {
@@ -64,5 +61,26 @@ public class TelegramSend {
             System.out.println(request.body());
         }
     }
+
+    @Test
+    public String getCode(String phone) throws Exception {
+
+        try{
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        String truephone = "7" + phone;
+
+        HttpRequest request = HttpRequest.post(smsUrl);
+        request.part("phone", truephone);
+        int status = request.code();
+        System.out.println(truephone);
+            //System.out.println(request.body());
+            String code = request.body();
+        System.out.println(code);
+        return code;
+    }
+
 
 }

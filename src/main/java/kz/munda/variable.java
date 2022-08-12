@@ -2,7 +2,7 @@ package kz.munda;
 
 import org.openqa.selenium.WebDriver;
 
-abstract class variable extends RegBuyerPage{
+public class variable extends RegBuyerPage{
 
 
     public static final String baseUrl = "https://mundaworld.com/";
@@ -10,6 +10,7 @@ abstract class variable extends RegBuyerPage{
     public static final String authUrl = "login";
     public static final String adminCabinetUrl = "http://admin.mundamarket.kz/";
     public static final String logUrl = "http://api.kex888.kz/sendtestlog.php?textlog=";
+    public static final String smsUrl = "http://test.mundamarket.kz/test.php?type=getcode";
     public static final String urlUpload = "http://api.kex888.kz/sendtestlog.php?sendphoto=";
 
     public static final String phone = getRandomPhone();
@@ -37,6 +38,6 @@ abstract class variable extends RegBuyerPage{
     }
 
     //Отправка уведомление, если тестирование успешно прошло
-    public static final boolean isSuccessSend = false;
+    public static final boolean isSuccessSend = true;
     public static final boolean sendErrorScreenshots = true;
 }
