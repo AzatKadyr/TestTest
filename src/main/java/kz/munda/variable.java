@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 public class variable extends RegBuyerPage{
 
 
-    public static final String baseUrl = "https://mundaworld.com/";
+    public static final String baseUrl = "https://mundamarket.kz/";
     public static final String registrationUrl = "registration";
     public static final String authUrl = "login";
     public static final String adminCabinetUrl = "http://admin.mundamarket.kz/";

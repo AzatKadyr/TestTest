@@ -48,7 +48,7 @@ public class RegBuyerTest extends WebDriverSettings{
         func.sleep(1000);
        // bayerPage.screenShots(testcase);
         bayerPage.clickBtnNext();
-
+/*
         func.sleep(1000);
         bayerPage.clickCountry();
         func.sleep(1000);
@@ -64,7 +64,7 @@ public class RegBuyerTest extends WebDriverSettings{
         bayerPage.insertPostIndex(postindex);
         bayerPage.clickBtnNext2();
         //bayerPage.screenShots(testcase);
-
+*/
         func.sleep(1000);
         bayerPage.insertPassword(password);
         func.sleep(1000);
