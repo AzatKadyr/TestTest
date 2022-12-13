@@ -1,6 +1,6 @@
 Запуск сервера для просмотра HTML отчетов
 В командной строке запустить
-allure serve C:\Users\imagi\IdeaProjects\kzmunda\allure-results
+allure serve C:\Users\imagi\IdeaProjects\Avtobys-ui-tests\allure-results
 
 Инструкция
 https://www.youtube.com/watch?v=5b4ZMAjHitw

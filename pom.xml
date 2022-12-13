@@ -15,6 +15,13 @@
 
     <dependencies>
         <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>LATEST</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.6.0</version>
@@ -86,7 +93,22 @@
             <artifactId>http-request</artifactId>
             <version>6.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.epam.reportportal</groupId>
+            <artifactId>agent-java-testng</artifactId>
+            <version>5.1.3</version>
+        </dependency>
+        <!-- TODO Leave only one dependency, depends on what logger you use: -->
+        <dependency>
+            <groupId>com.epam.reportportal</groupId>
+            <artifactId>logger-java-logback</artifactId>
+            <version>5.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.reportportal</groupId>
+            <artifactId>logger-java-log4j</artifactId>
+            <version>5.1.4</version>
+        </dependency>
     </dependencies>
 
 </project>
